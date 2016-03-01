@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+        name: impractical-engineering
+spec:
+        selector:
+                service: engineering-blog
+                site: impractical
+        ports:
+                - name: http
+                  protocol: TCP
+                  port: 80
+                  targetPort: 80
+                - name: https
+                  protocol: TCP
+                  port: 443
+                  targetPort: 443
+        type: LoadBalancer
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+        name: impractical-engineering-controller
+spec:
+        replicas: 1
+        selector:
+                service: engineering-blog
+                site: impractical
+        template:
+                metadata:
+                        labels:
+                                service: engineering-blog
+                                site: impractical
+                spec:
+                        containers:
+                                - name: impractical-engineering 
+                                  image: impractical/engineering:latest
+                                  ports:
+                                        - containerPort: 80
+                                        - containerPort: 443
