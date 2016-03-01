@@ -1,0 +1,18 @@
+baseurl = "https://impractical.engineering/"
+pygmentsuseclasses = true
+title = "Impractical Engineering"
+
+[permalinks]
+post = "/posts/:title"
+
+[params.inc]
+title = "Impractical Engineering"
+subtitle = "Bad ideas, courtesy of Impractical Labs"
+company = "Impractical Labs"
+url = "https://impractical.co"
+twitter = "impracticallabs"
+subtome = true
+google_font = "Raleway|Lato&subset=latin,latin-ext"
+
+[params.inc.sharing]
+twitter = true
