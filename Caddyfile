@@ -8,6 +8,9 @@ impractical.engineering {
     hook /webhook
   }
   tls paddy@impractical.co
+  errors {
+    404 404.html
+  }
 }
 
 www.impractical.engineering {

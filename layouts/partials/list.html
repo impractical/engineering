@@ -1,0 +1,8 @@
+{{ range .Data.Pages }}
+<div class="entry-content">
+	<header class="entry-header index-entry-header">
+		{{ partial "entry-header.html" . }}
+	</header>
+	{{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+{{ end }}

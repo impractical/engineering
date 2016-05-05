@@ -1,37 +1,44 @@
 <!doctype html>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Params.inc.title }} &mdash; {{ .Site.Params.inc.subtitle }}</title>
-    {{ with .Site.Params.inc.google_font }}<link href="https://fonts.googleapis.com/css?family={{ . }}" rel="stylesheet" type="text/css">{{ end }}
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/images/{{ .Site.Params.inc.logo }}"/>
-    <link href="{{ .Site.BaseURL }}/index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Params.inc.title }}" />
-    <meta name="title" content="{{ .Site.BaseURL }}">
-    <link rel="canonical" href="{{ .Site.BaseURL }}">
-    <meta property="og:title" content="{{ .Site.Params.inc.title }}"/>
-    <meta property="og:url" content="{{ .Site.BaseURL }}"/>
-    <meta property="og:image" content="{{ .Site.BaseURL }}/images/{{ .Site.Params.inc.logo }}"/>   
-    <meta property="og:site_name" content="{{ .Site.Params.inc.title }}">
-</head>
-<body>
-    
-<section class="site-nav">
-    <header>
-        <nav id="navigation">
-	    <a class="brand" href="{{ .Site.Params.inc.url }}">
-                <img src="/images/{{ .Site.Params.inc.logo }}" alt="Impractical Labs">
-            </a>
-            <a href="/" class="home">Blog</a>
-            {{ with .Site.Params.inc.product_link }}<a href="{{ . }}">Product</a>{{ end }}
-            {{ with .Site.Params.inc.about_link }}<a href="{{ . }}">About</a>{{ end }}
-        </nav>
-        <nav class="tagline">
-            {{ with .Site.Params.inc.tagline }}<span>{{ . }}</span>{{ end }}
-            {{ with .Site.Params.inc.product_link }}<a href="{{ . }}" class="btn btn-outline">Learn More</a>{{ end }}
-        </nav>
-    </header>
-</section>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{{ $title := partial "title.html" . | chomp }}
+		<title>{{ $title }}</title>
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/main.css">
 
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a1bf97">
+		<meta name="msapplication-TileColor" content="#ae4e34">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<meta name="title" content="{{ $title }}">
+		<link rel="canonical" href="{{ .Site.BaseURL }}">
+		<meta property="og:title" content="{{ $title }}"/>
+		<meta property="og:url" content="{{ .Site.BaseURL }}"/>
+		<meta property="og:image" content="{{ print .Site.BaseURL "/images/" .Site.Params.logo }}"/>
+		<meta property="og:site_name" content="{{ .Site.Title }}">
+	</head>
+
+	<body>
+		<header class="site-header">
+			<a href="{{ "/" | relURL }}" title="{{ .Site.Title }}"><img class="logo" src="/images/{{ .Site.Params.logo }}" /></a>
+			<h1 class="site-title">{{ .Site.Title }}</h1>
+			<p class="site-description">{{ .Site.Params.description }}</p>
+		</header>
