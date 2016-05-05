@@ -1,5 +1,13 @@
 		<footer class="site-footer">
-			<p>&copy; 2016 <a href="https://impractical.co" title="Impractical Labs">Impractical Labs</a></p>
+			<p>&copy; 2016 <a href="https://impractical.co" title="Impractical Labs">Impractical Labs</a> — <a class="subscribe-link" title="RSS feed" href="{{ .Site.RSSLink }}">Subscribe</a> or <a href="https://twitter.com/impracticallabs" title="Impractical Labs on Twitter">follow us on Twitter</a>.</p>
 		</footer>
+		<script type="text/javascript">
+			var subscribeLink = document.getElementsByClassName("subscribe-link");
+			if(subscribeLink) {
+				for (var i = 0; i < subscribeLink.length; i++) {
+					subscribeLink[i].onclick=function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z); return false};
+				}
+			}
+		</script>
   </body>
 </html>

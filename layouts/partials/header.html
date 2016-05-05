@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{{ $title := partial "title.html" . | chomp }}
 		<title>{{ $title }}</title>
+
 		<link rel="stylesheet" href="/css/normalize.css">
 		<link rel="stylesheet" href="/css/main.css">
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
@@ -29,10 +30,12 @@
 		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 
+		<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
+
 		<meta name="title" content="{{ $title }}">
-		<link rel="canonical" href="{{ .Site.BaseURL }}">
+		<link rel="canonical" href="{{ .URL | absURL }}">
 		<meta property="og:title" content="{{ $title }}"/>
-		<meta property="og:url" content="{{ .Site.BaseURL }}"/>
+		<meta property="og:url" content="{{ .URL | absURL }}"/>
 		<meta property="og:image" content="{{ print .Site.BaseURL "/images/" .Site.Params.logo }}"/>
 		<meta property="og:site_name" content="{{ .Site.Title }}">
 	</head>
