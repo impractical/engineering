@@ -1,6 +1,6 @@
 +++
 date = "2016-08-15T19:45:40-07:00"
-summary = "Our very first official release for the Darling project."
+description = "Our very first official release for the Darling project."
 title = "pan v0.1.0 released"
 url = "/darling/pan"
 
