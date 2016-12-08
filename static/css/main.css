@@ -1,6 +1,6 @@
 body {
   font-size: 1.25em;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.4em;
   color: rgb(95, 88, 79);
@@ -13,12 +13,12 @@ blockquote {
 }
 
 a {
-  color: rgb(161, 191, 151);
-  text-decoration: none;
+	color: rgb(93, 91, 81);
+  text-decoration: underline;
 }
 
 a:hover, a:visited {
-  color: rgb(174, 78, 52);
+  color: rgb(200, 78, 31);
 }
 
 strong {
@@ -26,7 +26,12 @@ strong {
 }
 
 h1, h2, h3, h4 {
-  font-weight: 700
+  font-weight: 700;
+	font-family: "flexoheavy";
+}
+
+h1 a, h2 a, h3 a, h4 a {
+	text-decoration: none;
 }
 
 .site-header .logo {
@@ -37,13 +42,16 @@ h1, h2, h3, h4 {
 
 .site-header .site-title {
   text-align: center;
-  margin: .5em 0 .25em;
+  margin: .5em 0 0;
   line-height: 1.2em;
+	text-transform: uppercase;
 }
 
 .site-header .site-description {
   text-align: center;
-  margin: .25em 0 1em;
+  margin: 0 0 1em;
+	text-transform: uppercase;
+	font-weight: 500;
 }
 
 .site-header {
